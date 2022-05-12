@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f2e9e4;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #22223b; /* color of side bar */
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #736175; /* color of words in side bar */
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;-
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f9d8f7; /* color of highlight in sidebar words when hover */
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 250px 400px;
+  margin-top: -4px;
+}
+
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: #4a4e69; /* drop down color of box*/
+  color: whitesmoke;/* color of letter */
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #3a374f; /* color of boxes in dropdown */
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="artwork.html">Artwork</a>
+  <a href="drone.html">Drone Work</a>
+  <button class="dropdown-btn">Contacts 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="https://instagram.com/cronarch.y?utm_medium=copy_link">Instagram</a>
+    <a href="https://twitter.com/cronarchy?s=21">Twitter</a>
+    <a href="https://www.linkedin.com/in/isabel-armstrong/">LinkedIn</a>
+    <a href="mailto:Issyarms@gmail.com">Email</a>
+  </div> 
+</div>
+
+<div class="main">
+  <h1>Isabel's Portfolio</h1>
+
+  <div class="grid">
+    <div class="photo">
+      <img src="images/photo.jpg" alt="a"
+      width="200"height="220">
+    </div>
+
+    <div class="description">
+      <p>I have focused for the last 3 years in high school to specifically gain knowledge and experience is computer science and general education. I look forward to advancing my skills and partnering with a business to merge the skills I have obtained and overcome challenges by incorporating drone, computer science, and electronics skills.</p>
+    </div>
+  </div>
+  
+</div>
+
+  
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
+
+
+  
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
